@@ -1,4 +1,7 @@
 Thumbs.db
 *.pbm
 *.pgm
+data*.txt
 *.o
+seq
+par

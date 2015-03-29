@@ -49,12 +49,11 @@ int main(int argc, char* argv[]) {
 	}
 	ffTime(STOP_TIME);
 
-	//write(tasks, streamlen);
-
-	// print service time
-	double global_worker_time = ffTime(GET_TIME); //farm.ffwTime();
-	std::cout << global_worker_time / streamlen << std::endl;
+	// print completion time
+	std::cout << ffTime(GET_TIME) << std::endl;
 	farm.ffStats(std::cout);
+
+	//write(tasks, streamlen);
 	
 	return 0;
 }

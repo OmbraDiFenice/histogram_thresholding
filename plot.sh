@@ -211,7 +211,7 @@ create_gnuplot_file() {
 	echo "set terminal pbm color" > $gnuplot_file
 
 	# service time graph
-	add_graph_commands "service_time" 2 "nw" "time (ms)" "$Tseq/x"
+	add_graph_commands "completion_time" 2 "nw" "time (ms)" "$Tseq/x"
 	
 	# scalability graph
 	add_graph_commands "scalability" 3 "nw" "" "x"

@@ -40,8 +40,8 @@ int main(int argc, char* argv[]) {
 	}
 	ff::ffTime(ff::STOP_TIME);
 	
-	// print "service time"
-	cout << ff::ffTime(ff::GET_TIME) / streamlen << endl;
+	// print completion time
+	cout << ff::ffTime(ff::GET_TIME) << endl;
 
 	//write(tasks, streamlen);
 
