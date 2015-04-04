@@ -235,7 +235,7 @@ then
 	echo
 fi
 
-if (( $executions <= 2 ))
+if (( $executions <= 3 ))
 then
 	echo "Warning: the average will include best and worst results"
 	echo
@@ -265,8 +265,16 @@ do
 		create_data_file
 
 		echo "executing parallel code"
-		for ((nw=1;nw<=max_nw;nw++))
+		nw=0
+		for ((j=0;nw<max_nw;j++))
+		#for nw in 1 `seq 2 2 $max_nw`
 		do
+			nw=$((2**$j))
+			if (( nw>max_nw ))
+			then
+				nw=$max_nw
+			fi
+
 			echo -n "  using $nw workers"
 
 			average par avgTpar

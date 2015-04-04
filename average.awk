@@ -12,7 +12,7 @@
 	}
 }
 END {
-	if( NF > 2) {
+	if( NF > 3) {
 		print ((sum - min - max)/(NF-2))
 	} else {
 		print sum/NF
