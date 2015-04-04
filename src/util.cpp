@@ -5,9 +5,9 @@ using namespace std;
 task** load(int threshold, string filename, int streamlen) {
 	task **tasks = new task*[streamlen];
 
-	task blueprint(0, threshold, filename);
+	task blueprint(threshold, filename);
 	for(int i = 0;i < streamlen;i++) {
-		tasks[i] = new task(i, blueprint);
+		tasks[i] = new task(blueprint);
 	}
 
 	return tasks;

@@ -2,9 +2,7 @@
 
 using namespace std;
 
-task::task(int id, int threshold, string filename) {
-	this->id = id;
-
+task::task(int threshold, string filename) {
 	input_image.load(filename);
 
 	int size = input_image.maxval;
@@ -16,9 +14,7 @@ task::task(int id, int threshold, string filename) {
 	grey_threshold = 0;
 }
 
-task::task(int id, const task& copy) : input_image(copy.input_image){
-	this->id = id;
-
+task::task(const task& copy) : input_image(copy.input_image){
 	int size = input_image.maxval;
 	freq = new int[size];
 	for(int i = 0; i < size; i++) {

@@ -10,15 +10,14 @@
 class task {
 
 	public:
-		int id;
 		PGM input_image;
 		int input_threshold; // number of pixel needed to exceed the threshold
 
 		int* freq; // grey shades frquencies
 		int grey_threshold; // index of the threshold grey shade
 	
-		task(int id, int threshold, std::string filename);
-		task(int id, const task& copy);
+		task(int threshold, std::string filename);
+		task(const task& copy);
 		~task();
 
 		void compute_frequencies();
