@@ -2,7 +2,7 @@ CXX=/usr/local/gnu/bin/g++
 CXXFLAGS=-std=c++0x -O3
 INCLUDES=-I/usr/local/fastflow-2.0.4
 LDFLAGS=-lpthread
-FF_FLAGS=-DNO_DEFAULT_MAPPING -DTRACE_FASTFLOW
+FF_FLAGS=-DTRACE_FASTFLOW -DNO_DEFAULT_MAPPING
 
 SRC_DIR=src
 OBJ_DIR=bin
@@ -23,7 +23,7 @@ $(OBJECTS): $(OBJ_DIR)/%.o: $(addprefix $(SRC_DIR)/, %.cpp %.hpp)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@ $(FF_FLAGS)
 
 # Sequential
-$(SEQ_EXE): $(OBJ_DIR)/Seq.o $(OBJECTS)
+$(SEQ_EXE): $(OBJ_DIR)/Seq.o $(filter-out farm_worker.o streamer.o, $(OBJECTS))
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $^ -o $@ $(LDFLAGS) $(FF_FLAGS)
 
 $(OBJ_DIR)/Seq.o: $(SRC_DIR)/Seq.cpp
