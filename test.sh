@@ -5,8 +5,8 @@
 #
 
 # settable variables
-files='images/foto.pgm'
-streamlen='100'
+files='images/flower.pgm'
+streamlen='1500'
 max_nw=16
 executions=1
 threshold=50
@@ -29,15 +29,15 @@ usage() {
 	echo "  -?      print this message"
 	echo "  -f <file-list>"
 	echo "          space separated list of image files used to perform tests."
-	echo "          Defaults to \"images/foto.pgm\""
+	echo "          Defaults to \"images/flower.pgm\""
 	echo "  -s <streamlen-list>"
 	echo "          space separated list of (simulated) stream length used to perform tests."
-	echo "          Defaults to \"100\""
+	echo "          Defaults to \"1500\""
 	echo "  -w <max-nw>"
-	echo "          maximum number of worker used. The parallel code is run using workers in the range from 1 up to this value."
+	echo "          maximum number of worker used. The parallel code is run using workers in the range from 1 up to this value by power of 2."
 	echo "          Defaults to 16"
 	echo "  -e <executions>"
-	echo "          specify how many times the sequential and parallel code must be executed to get the average service time."
+	echo "          specify how many times the sequential and parallel code must be executed to get the average time."
 	echo "          Defaults to 1"
 	echo "  -t <threshold>"
 	echo "          specify the threshold used to perform all tests. This value will always be the same in any execution."
