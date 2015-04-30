@@ -34,7 +34,6 @@ int main(int argc, char* argv[]) {
 		
 		t->compute_frequencies();
 		t->find_grey_threshold();
-		//t->grey_threshold = 129;
 		t->compute_histogram();
 
 	}
@@ -43,7 +42,7 @@ int main(int argc, char* argv[]) {
 	// print completion time
 	cout << ff::ffTime(ff::GET_TIME) << endl;
 
-	//write(tasks, streamlen);
+	write(tasks, streamlen);
 
 	return 0;
 }

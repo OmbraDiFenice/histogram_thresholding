@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
 	std::cout << ffTime(GET_TIME) << std::endl;
 	farm.ffStats(std::cout);
 
-	//write(tasks, streamlen);
+	write(tasks, streamlen);
 	
 	return 0;
 }
